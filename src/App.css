@@ -1,0 +1,24 @@
+.pass-match{
+    padding-top:2px !important ;
+    margin-top:0px !important;
+    color:darkgreen;
+    font-size: 12px;
+}
+
+.notmatch{
+    color:darkred;
+
+}
+.application{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    font-size: 50px;
+
+}
+.btn-color{
+    color:white !important;
+    background-color:#51459E !important;
+}
