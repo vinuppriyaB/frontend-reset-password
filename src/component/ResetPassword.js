@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from "react";
 
 
-export function ResetPassword({setCurrentUser,currentUser="vinu"}){
+export function ResetPassword({setCurrentUser,currentUser}){
   const {token}= useParams();  
   
     const paperStyle={padding :50,height:'40vh',width:380, margin:"100px auto"}
