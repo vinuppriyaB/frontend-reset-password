@@ -92,11 +92,13 @@ export const Login=({setCurrentUser,currentUser})=>{
                 onClick={() => {loginprocess()
                 }}
                 >Sign in</Button>
-                <Typography >
-                     <Link href="/forgetpassword" >
-                        Forgot password ?
-                </Link>
-                </Typography>
+                <Button variant="text" 
+                
+                style={{color:"#51459E"}}
+                onClick={()=>history.push("/forgetpassword")} 
+                > Forgot password ?
+                </Button>
+                
                 
                 <Typography > Don't you have an account ?
                 <Button variant="text" 

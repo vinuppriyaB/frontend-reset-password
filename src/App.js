@@ -33,7 +33,7 @@ function App() {
         <ForgetPassword currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route>
 
-        <Route  path="/reset-password/:id/:token">
+        <Route  path="/reset-password/:token">
         <ResetPassword currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route>
         <Route  path="/application">
