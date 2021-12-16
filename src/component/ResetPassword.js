@@ -32,7 +32,7 @@ export function ResetPassword({setCurrentUser,currentUser}){
         const loginuser={email:email,newpassword:password ,token:token}; 
        
         
-        fetch("https://login-proces.herokuapp.com/reset-password/user",
+        fetch("http://localhost:8500/reset-password/user",
     {
         method:"POST",
         body: JSON.stringify(loginuser),
