@@ -52,7 +52,7 @@ export function Registration({setCurrentUser,currentUser}){
           }
           else
           {
-            window.alert("Account Exist");
+            window.alert("invalid credential");
            
           }
         
