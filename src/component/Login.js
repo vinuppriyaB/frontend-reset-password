@@ -40,19 +40,20 @@ export const Login=({setCurrentUser,currentUser})=>{
         headers:{"Content-Type":"application/json"},
     }).then((res)=>{
          setCurrentUser(email)
-        if(res.status==401)
+        if(res.status==200)
           {
-            window.alert("Invalid user account");
+            history.push("/application")
+            resetLoginForm();
           }
           else
           {
-            
-            history.push("/application")
+            window.alert("Invalid user account");
+           
 
           }
          
         
-        resetLoginForm();
+       
     }).catch((e)=> console.log("ERROR"))  
 }
 

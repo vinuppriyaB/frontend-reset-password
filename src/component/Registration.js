@@ -44,18 +44,19 @@ export function Registration({setCurrentUser,currentUser}){
         headers:{"Content-Type":"application/json"},
     }).then((res)=>{
         setCurrentUser(name)
-        if(res.status==400)
+        if(res.status==200)
           {
-            window.alert("Account Exist");
+            history.push("/application")
+            window.alert("Register successfully");
+            resetLoginForm();
           }
           else
           {
-            
-            window.alert("Register successfully");
+            window.alert("Account Exist");
            
           }
         
-        resetLoginForm();
+        
     }).catch((e)=> console.log("ERROR")) 
     
 }
@@ -156,7 +157,7 @@ export function Registration({setCurrentUser,currentUser}){
                 
                 style={{color:"#51459E"}}
                 onClick={()=>history.push("/")} 
-                > Login in
+                > Login
                 </Button>
                 </Typography>
             </Paper>

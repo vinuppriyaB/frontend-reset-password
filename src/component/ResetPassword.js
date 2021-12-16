@@ -2,14 +2,14 @@
 import React from 'react'
 import { Grid,Paper, Avatar, TextField, Button} from '@material-ui/core'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useParams } from 'react-router-dom';
-import { useState } from "react";
+import { useParams ,useHistory} from 'react-router-dom';
+import { useState,useEffect } from "react";
 import { VibrationOutlined } from '@material-ui/icons';
 
 
 export function ResetPassword({setCurrentUser,currentUser}){
   const {token}= useParams();  
-  
+  const history =useHistory();
     const paperStyle={padding :50,height:'40vh',width:380, margin:"100px auto"}
     const avatarStyle={backgroundColor:"#51459E"}
     const btnstyle={margin:'20px 0',backgroundColor:"#51459E"}
@@ -20,7 +20,7 @@ export function ResetPassword({setCurrentUser,currentUser}){
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [show,setShow]=useState(false);
-    
+    const [matchIndicator,setMatchIndicator] = useState(true);
     
     const resetLoginForm = (event) => {
            
@@ -40,20 +40,37 @@ export function ResetPassword({setCurrentUser,currentUser}){
         headers:{"Content-Type":"application/json"},
     }).then((res)=>{
         
-        if(res.status==400)
+        if(res.status==200)
           {
-            window.alert("invalid credential ");
+            window.alert("Reset successfully ");
+            history.push("/application")
+            resetLoginForm();
+            
           }
           else
           {
-            window.alert("Reset successfully ");
             
+            window.alert("invalid credential ");
           
           }
         
-        resetLoginForm();
+        
     }).catch((e)=> console.log("ERROR"))  
 }
+    function checkPassword(event){
+            
+        
+        console.log(password,confirmPassword)
+        if(password!=confirmPassword)
+        {
+            setMatchIndicator(false)
+        }
+        else
+        {
+            setMatchIndicator(true)
+        }
+    }
+    useEffect(()=>checkPassword(),[confirmPassword])
 
     return(
         <div>
@@ -90,6 +107,7 @@ export function ResetPassword({setCurrentUser,currentUser}){
                 onChange={event => setConfirmPassword(event.target.value)}
                 />
                 
+                {matchIndicator ? "":<p className="pass-match notmatch">Password should Match</p>}
                 
                 <Button type='submit' 
                 className="btn-color"

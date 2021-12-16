@@ -22,3 +22,8 @@
     color:white !important;
     background-color:#51459E !important;
 }
+.pasword-hint{
+    font-size: 14px;
+    color:darkred;
+    font-family:sans-serif ;
+}

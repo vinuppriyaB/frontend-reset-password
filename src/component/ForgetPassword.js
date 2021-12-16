@@ -40,19 +40,21 @@ export function ForgetPassword({setCurrentUser,currentUser}){
         headers:{"Content-Type":"application/json"},
     }).then((res)=>{
         
-        if(res.status==400)
-          {
-            window.alert("invalid credential ");
-          }
-          else
+        if(res.status==200)
           {
             setCheckMail(true);
             setTimeout(()=>{
               history.push("/")
             },2000)
+            resetLoginForm();
+          }
+          else
+          {
+            window.alert("invalid credential ");
+            
           }
         
-        resetLoginForm();
+       
     }).catch((e)=> console.log("ERROR"))  
 }
 
