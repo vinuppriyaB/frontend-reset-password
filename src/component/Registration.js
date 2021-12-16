@@ -37,7 +37,7 @@ export function Registration({setCurrentUser,currentUser}){
         const loginuser={username:name,email:email,password:password }; 
        
         
-        fetch("http://localhost:8500/user/signup",
+        fetch("https://login-proces.herokuapp.com/user/signup",
     {
         method:"POST",
         body: JSON.stringify(loginuser),

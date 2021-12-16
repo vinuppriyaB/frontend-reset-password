@@ -34,7 +34,7 @@ export function ForgetPassword({setCurrentUser,currentUser}){
         setCurrentUser(email);
        
         
-        fetch("http://localhost:8500/forget-password",
+        fetch("https://login-proces.herokuapp.com/forget-password",
     {
         method:"POST",
         body: JSON.stringify(userEmail),
