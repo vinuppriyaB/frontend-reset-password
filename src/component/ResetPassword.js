@@ -4,6 +4,7 @@ import { Grid,Paper, Avatar, TextField, Button} from '@material-ui/core'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useParams } from 'react-router-dom';
 import { useState } from "react";
+import { VibrationOutlined } from '@material-ui/icons';
 
 
 export function ResetPassword({setCurrentUser,currentUser}){
@@ -17,7 +18,7 @@ export function ResetPassword({setCurrentUser,currentUser}){
     
     const [confirmPassword, setConfirmPassword] = useState("");
     const [password, setPassword] = useState("");
-    const [email, setEmail] = useState(currentUser);
+    const [email, setEmail] = useState("");
     const [show,setShow]=useState(false);
     
     
@@ -29,9 +30,9 @@ export function ResetPassword({setCurrentUser,currentUser}){
             
         };
     const createAccount = () => {  
-        const loginuser={email:email,newpassword:password ,token:token}; 
+        const loginuser={email:currentUser,newpassword:password }; 
        
-        
+        console.log(loginuser);
         fetch("https://login-proces.herokuapp.com/reset-password/user",
     {
         method:"POST",

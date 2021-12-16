@@ -31,17 +31,15 @@ export function ForgetPassword({setCurrentUser,currentUser}){
         };
     const sendMail = () => {  
         const userEmail={email:email}; 
-        setCurrentUser(email);
-       
-        
+        console.log(userEmail)
+        console.log(currentUser)
         fetch("https://login-proces.herokuapp.com/forget-password",
     {
         method:"POST",
         body: JSON.stringify(userEmail),
         headers:{"Content-Type":"application/json"},
     }).then((res)=>{
-       
-      
+        
         if(res.status==400)
           {
             window.alert("invalid credential ");
@@ -74,7 +72,12 @@ export function ForgetPassword({setCurrentUser,currentUser}){
                 style={textstyle}
                 fullWidth required
                 value={email}
-                onChange={event => setEmail(event.target.value)}
+                onChange={event => {
+                    setEmail(event.target.value)
+                    console.log(email)
+                    setCurrentUser(event.target.value);
+                    console.log(currentUser)
+                }}
                 />
                 
                 
@@ -84,7 +87,10 @@ export function ForgetPassword({setCurrentUser,currentUser}){
                 variant="contained" 
                 style={btnstyle} 
                 fullWidth
-                onClick={() => {sendMail()
+                onClick={() => {
+                    
+      
+                    sendMail()
                 }}
                 >send link</Button>
                 
