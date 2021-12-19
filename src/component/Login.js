@@ -12,8 +12,8 @@ import { useState } from "react";
 export const Login=({setCurrentUser,currentUser})=>{
     
 
-    const paperStyle={padding :50,height:'50vh',width:380, margin:"100px auto"}
-    const avatarStyle={backgroundColor:"#51459E"}
+    const paperStyle={padding :50,height:'50vh',width:"30rem", margin:"150px auto"}
+    const avatarStyle={backgroundColor:"#51459E",margin:"10px auto"}
     const btnstyle={margin:'20px 0',backgroundColor:"#51459E"}
     const textstyle={margin:'20px 0'}
 

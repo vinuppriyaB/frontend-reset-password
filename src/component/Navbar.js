@@ -78,33 +78,35 @@ export function Navbar() {
     >
       <MenuItem className="menu-item">
       <Button
+      className="name"
       onClick={()=>history.push("/application")}
       sx={{ my: 2, color: 'white', display: 'block' }}
     >
       Dashboard
     </Button>
     <Button
-     
+    className="name"
       onClick={()=>history.push("/create")}
       sx={{ my: 2, color: 'white', display: 'block' }}
     >
      CreateURL
     </Button>
     <Button
-     
+    className="name"
       onClick={()=>history.push("/showtable")}
       sx={{ my: 2, color: 'white', display: 'block' }}
     >
      ShowTable
     </Button>
-      </MenuItem>
-      <Button
-     
+    <Button
+      className="name"
       onClick={()=>history.push("/")}
       sx={{ my: 2, color: 'white', display: 'block' }}
     >
      Logout
     </Button>
+      </MenuItem>
+      
     </Menu>
   );
 

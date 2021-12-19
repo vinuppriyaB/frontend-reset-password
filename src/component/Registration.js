@@ -12,8 +12,8 @@ import { useState } from "react";
 export function Registration({setCurrentUser,currentUser}){
     
 
-    const paperStyle={padding :50,height:'70vh',width:'45vh', margin:"100px auto"}
-    const avatarStyle={backgroundColor:"#51459E"}
+    const paperStyle={padding :60,height:'70vh',width:'50vh', margin:"100px auto"}
+    const avatarStyle={backgroundColor:"#51459E",margin:"10px auto"}
     const btnstyle={margin:'20px 0',backgroundColor:"#51459E"}
     const textstyle={margin:'13px 0'}
 
@@ -159,7 +159,7 @@ export function Registration({setCurrentUser,currentUser}){
                 >Register</Button>
                 
                {show? <p className="pasword-hint">
-                    Password must contain: 1 capital,1 small,1 number,1 special character,max 8 char
+                    Password must contain: 1 capital,1 small,1 number,1 special character,max 8 character
                 </p>:""}
                 
                 <Typography > Do you have an account ?

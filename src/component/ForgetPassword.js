@@ -13,10 +13,10 @@ import { useState } from "react";
 export function ForgetPassword({setCurrentUser,currentUser}){
     
 
-    const paperStyle={padding :50,height:'40vh',width:380, margin:"100px auto"}
-    const avatarStyle={backgroundColor:"#51459E"}
+    const paperStyle={padding :50,height:'40vh',width:"30rem", margin:"150px auto"}
+    const avatarStyle={backgroundColor:"#51459E",margin:"10px auto"}
     const btnstyle={margin:'20px 0',backgroundColor:"#51459E"}
-    const textstyle={margin:'10px 0'}
+    const textstyle={margin:'20px 0'}
 
     
     const [email, setEmail] = useState("");

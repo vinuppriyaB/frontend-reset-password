@@ -4,16 +4,15 @@ import { Grid,Paper, Avatar, TextField, Button} from '@material-ui/core'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useParams ,useHistory} from 'react-router-dom';
 import { useState,useEffect } from "react";
-import { VibrationOutlined } from '@material-ui/icons';
 
 
 export function ResetPassword({setCurrentUser,currentUser}){
   const {token}= useParams();  
   const history =useHistory();
-    const paperStyle={padding :50,height:'40vh',width:380, margin:"100px auto"}
-    const avatarStyle={backgroundColor:"#51459E"}
+    const paperStyle={padding :50,height:'50vh',width:"30rem", margin:"100px auto"}
+    const avatarStyle={backgroundColor:"#51459E",margin:"10px auto"}
     const btnstyle={margin:'20px 0',backgroundColor:"#51459E"}
-    const textstyle={margin:'10px 0'}
+    const textstyle={margin:'20px 0'}
 
     
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -120,7 +119,7 @@ export function ResetPassword({setCurrentUser,currentUser}){
                 >change password</Button>
                 
                {show? <p className="pasword-hint">
-                    Password must contain: 1 capital,1 small,1 number,1 special character,max 8 char
+                    Password must contain: 1 capital,1 small,1 number,1 special character,max 8 character
                 </p>:""}
                 
                 

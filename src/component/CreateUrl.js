@@ -9,25 +9,24 @@ import { useState } from "react";
 export const CreateUrl=()=>{
     
 
-    const paperStyle={padding :50,height:'50vh',width:"50vw", margin:"100px auto"}
+    const paperStyle={padding :50,height:'40vh',width:"50vw", margin:"100px auto"}
     
     const btnstyle={margin:'20px 0',backgroundColor:"#51459E"}
     const textstyle={margin:'20px 0'}
 
    
     const [long, setLong] = useState("");
-    const [short, setShort] = useState("");
     
     
    
     const resetLoginForm = (event) => {
         setLong("");
-        setShort("");
+        
           
             
         };
     const createprocess = () => {  
-        const createdurl={long:long,short:short}; 
+        const createdurl={long:long}; 
         
         
         fetch("https://login-proces.herokuapp.com/urlshorten/create",
@@ -63,7 +62,7 @@ export const CreateUrl=()=>{
             
             <div >
             <Paper elevation={10} style={paperStyle} className="paper-style">
-            <h3>Create Shorten URL</h3>
+            <h3 className="h3-tag">Create Shorten URL</h3>
                
                 <TextField label='URL' 
                 id="outlined-basic"
@@ -73,16 +72,7 @@ export const CreateUrl=()=>{
                 value={long}
                 onChange={event => setLong(event.target.value)}
                 />
-                <TextField 
-                id="outlined-basic"
-                label='shorten' 
-                placeholder='Enter shorten'  
-                style={textstyle} 
-                type='text' 
-                fullWidth required
-                value={short}
-                onChange={event => setShort(event.target.value)}
-                />
+                
                 
                 <Button type='submit' 
                 className="btn-color"
