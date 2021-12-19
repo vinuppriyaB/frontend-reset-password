@@ -27,3 +27,118 @@
     color:darkred;
     font-family:sans-serif ;
 }
+/* .display-content{
+    
+    align-items: center;
+    
+}*/
+.table-content{
+    display:flex;
+    
+    justify-content: center;
+    flex-direction: column;
+    gap:30px;
+    max-width:80%;
+    margin:100px auto;
+    overflow-x:auto;
+    
+
+}
+.table1 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table1 td, .table1 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 17px;
+  }
+  .table1 th{
+    font-size: 20px;
+
+  }
+  /* #f2f2f2 */
+  .table1 tr:nth-child(even){background-color: #f8f6fd;}
+  
+  .table1 tr:hover {background-color: #e9e6f8;}
+  
+  .table1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #51459E;
+    color: white;
+  }
+
+  
+.dashboard-chart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:200px auto;
+    width:70%;
+    gap:50px;
+    
+}
+  @media screen and (max-width:768px){
+    .dashboard-chart{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width:90%;
+        margin:100px 10px;
+        
+        /* background-color: teal; */
+        /* height: 500px; */
+        gap:20px;
+        
+    }
+    
+    .paper-style{
+        width:95% !important;
+
+    }
+    
+  }
+  .nav-bar{
+      color:white !important;
+  }
+  .btn-color{
+    background-color: #51459E !important;
+    color: white !important;
+  }
+  .name{
+    color:#51459E;
+  }
+  
+  .navbar-btn{
+    border: 1px solid white !important;
+    color:white !important;
+  
+  }
+  .posted{
+    font-size: 10px;
+  }
+  .menu-item{
+      display: flex !important;
+      flex-direction: column !important;
+  }
+  .footer{
+      height:80px;
+      width: 100vw;
+      border-top:3px solid #51459E;
+    background-color: white !important;
+    color: black !important;
+    position:absolute;
+    bottom: 0px;
+    padding-top: 5px;
+    
+
+  }
+  .icon-color{
+    background-color: white !important;
+    color: #51459E !important;
+
+  }

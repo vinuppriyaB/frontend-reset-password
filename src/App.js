@@ -7,6 +7,8 @@ import {Login } from "./component/Login";
 import { ForgetPassword } from "./component/ForgetPassword";
 import { ResetPassword } from "./component/ResetPassword";
 import {Application} from "./component/Application.js";
+import {ShowTable} from "./component/ShowTable";
+import  {CreateUrl} from "./component/CreateUrl";
 
 function App() {
   const [currentUser,setCurrentUser]= useState("");
@@ -38,6 +40,12 @@ function App() {
         </Route>
         <Route  path="/application">
         <Application />
+        </Route>
+        <Route  path="/showtable">
+        <ShowTable />
+        </Route>
+        <Route  path="/create">
+        <CreateUrl />
         </Route>
         {/* <Route exact path="/question">
         <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />

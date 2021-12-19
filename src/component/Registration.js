@@ -12,13 +12,14 @@ import { useState } from "react";
 export function Registration({setCurrentUser,currentUser}){
     
 
-    const paperStyle={padding :50,height:'55vh',width:380, margin:"100px auto"}
+    const paperStyle={padding :50,height:'70vh',width:'45vh', margin:"100px auto"}
     const avatarStyle={backgroundColor:"#51459E"}
     const btnstyle={margin:'20px 0',backgroundColor:"#51459E"}
-    const textstyle={margin:'10px 0'}
+    const textstyle={margin:'13px 0'}
 
    
-    const [name, setName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [show,setShow]=useState(false);
@@ -27,14 +28,15 @@ export function Registration({setCurrentUser,currentUser}){
     
     const history = useHistory();
     const resetLoginForm = (event) => {
-            setName("");
+        setFirstName("");
+        setLastName("")
             setPassword("");
             setEmail("");
             setConfirmPassword("");
             
         };
     const createAccount = () => {  
-        const loginuser={username:name,email:email,password:password }; 
+        const loginuser={firstName:firstName,lastName:lastName,email:email,password:password }; 
        
         
         fetch("https://login-proces.herokuapp.com/user/signup",
@@ -43,11 +45,11 @@ export function Registration({setCurrentUser,currentUser}){
         body: JSON.stringify(loginuser),
         headers:{"Content-Type":"application/json"},
     }).then((res)=>{
-        setCurrentUser(name)
+        setCurrentUser(email)
         if(res.status==200)
           {
-            history.push("/application")
-            window.alert("Register successfully");
+            history.push("/")
+            window.alert("Activate acount by click URL sent to your mail");
             resetLoginForm();
           }
           else
@@ -87,13 +89,21 @@ export function Registration({setCurrentUser,currentUser}){
                      <Avatar style={avatarStyle}><AccountCircleIcon/></Avatar>
                     <h2>SIGN UP</h2>
                 </Grid>
-                <TextField label='Username' 
-                placeholder='Enter username'  
+                <TextField label='firstName' 
+                placeholder='Enter firstName'  
                 style={textstyle}
                 fullWidth required
-                value={name}
+                value={firstName}
                 
-                onChange={event => setName(event.target.value)}
+                onChange={event => setFirstName(event.target.value)}
+                />
+                <TextField label='lastName' 
+                placeholder='Enter lastName'  
+                style={textstyle}
+                fullWidth required
+                value={lastName}
+                
+                onChange={event => setLastName(event.target.value)}
                 />
                 <TextField label='Email' 
                 placeholder='Enter Email'  
